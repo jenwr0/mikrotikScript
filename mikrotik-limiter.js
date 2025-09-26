@@ -14,10 +14,11 @@
 :foreach id in=[/ip hotspot active find where address in $subnet] do={
     :local ip [/ip hotspot active get $id value-name=address];
     :local qA ("$prefix$ip" . ($suffix->0));
-    :local qA ("$prefix$ip" . ($suffix->1));
+    :local qB ("$prefix$ip" . ($suffix->1));
     :if ([/queue tree get [find name=$qA] max-limit] != $todayLimit) do={
         /queue tree set [find name=$qA] max-limit=$todayLimit;
         /queue tree set [find name=$qB] max-limit=$todayLimit;
     }
 
 }
+

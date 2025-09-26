@@ -1,4 +1,5 @@
-###-----MirotikLimiter
+### -----MirotikLimiter
+### -- I use custom queue tree and firewall mangle
 
 :local limits { 1=62914560; 2=15728640; 3=10485760; 4=7864320; 5=6291456; 6=5242880 };
 :local subnet "192.168.3.0/24";
@@ -18,4 +19,5 @@
         /queue tree set [find name=$qA] max-limit=$todayLimit;
         /queue tree set [find name=$qB] max-limit=$todayLimit;
     }
+
 }

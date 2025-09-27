@@ -11,6 +11,7 @@
 :local base 35000000
 :local maxUser 6
 :local subnet "192.168.3.0/24" # I used 192.168.255.0 for guest user (Static bw)
+:local guestsubnet "192.168.255.0/24"
 :local prefix "U-"
 :local suffix {"-A"; "-B"}
 
@@ -46,4 +47,5 @@
         /queue tree set [find name=$qB] max-limit=$todayLimit
     }
 }
+
 
